@@ -1,0 +1,462 @@
+barcodes_files:
+    [
+    "barcodes_C9C2CANXX_2.txt",
+    "barcodes_C9C2CANXX_8.txt"
+    ]
+
+adapters_file: adapters.fa
+
+fastq:
+    [
+    "915789",
+    "915839",
+    "915895",
+    "916124",
+    "916145",
+    "916224",
+    "915790",
+    "915840",
+    "915897",
+    "916125",
+    "916146",
+    "916225",
+    "915791",
+    "915841",
+    "915899",
+    "916127",
+    "916147",
+    "916227",
+    "915792",
+    "915849",
+    "915900",
+    "916128",
+    "916148",
+    "916228",
+    "915793",
+    "915852",
+    "915901",
+    "916129",
+    "916149",
+    "917549",
+    "915802",
+    "915853",
+    "915902",
+    "916130",
+    "916150",
+    "917550",
+    "915803",
+    "915861",
+    "915903",
+    "916131",
+    "916210",
+    "917551",
+    "915805",
+    "915862",
+    "915905",
+    "916133",
+    "916212",
+    "917552",
+    "915813",
+    "915863",
+    "916111",
+    "916135",
+    "916213",
+    "917553",
+    "915814",
+    "915864",
+    "916113",
+    "916136",
+    "916214",
+    "917554",
+    "915815",
+    "915865",
+    "916115",
+    "916137",
+    "916215",
+    "917555",
+    "915816",
+    "915876",
+    "916116",
+    "916138",
+    "916216",
+    "917556",
+    "915817",
+    "915888",
+    "916117",
+    "916139",
+    "916217",
+    "917557",
+    "915827",
+    "915890",
+    "916118",
+    "916140",
+    "916219",
+    "917559",
+    "915828",
+    "915891",
+    "916119",
+    "916141",
+    "916220",
+    "917560",
+    "915829",
+    "915892",
+    "916120",
+    "916142",
+    "916221",
+    "917561",
+    "915837",
+    "915893",
+    "916121",
+    "916143",
+    "916222",
+    "915838",
+    "915894",
+    "916123",
+    "916144",
+    "916223"
+    ]
+
+reference_genome: Egrandis_297_v2.0.softmasked.fa
+
+combine_samples: "all_samples_without_barcodes_and_adapters.fq"
+combine_bam: all_samples.bam
+
+mapping:
+    fastq:
+        [
+    "no_mapped_mm0",
+    "no_mapped_mm1",
+    "no_mapped_mm2",
+    "no_mapped_mm3"
+        ]
+    sam:
+        [
+    "all_reads_mm0",
+    "all_reads_mm1",
+    "all_reads_mm2",
+    "all_reads_mm3"
+        ]
+    sam_samples:
+        [
+    "_mm0",
+    "_mm1",
+    "_mm2",
+    "_mm3"
+        ]
+    threads: 24
+
+places_g2_g3:
+    ["MG", "PR"]
+
+bam_to_bed:
+    bed_name: all_samples.bed
+
+enzymes_sites: msp_pst_sites_positions_sorted.bed
+
+sample_site_definition:
+    [
+    "enz_sites_sample_reads_clusters.bed",
+    "enz_sites_sample_reads_clusters_of_interest.bed"
+    ]
+
+find_unique_pos:
+    [
+    "good_clusters.bed",
+    "clusters_without_pstI.bed",
+    "msdartseq_positions.bed"
+    ]
+
+featurecounts:
+    [
+    "msdartseq_positions.saf",
+    "msdartseq_counts"
+    ]
+
+names_correspondence: bam_to_samples_names.csv
+
+counts_correction:
+    [
+    "msdartseq_positions_fixed.bed",
+    "msdartseq_counts_fixed.tst"
+    ]
+
+techinical_replicates:
+    samples:
+        [
+        "2_143_A1_leaf_hp",
+        "2_143_A1_leaf_ms",
+        "2_145_A1_leaf_hp",
+        "2_145_A1_leaf_ms",
+        "2_155_D4_leaf_hp",
+        "2_155_D4_leaf_ms",
+        "2_159_D4_leaf_hp",
+        "2_159_D4_leaf_ms",
+        "2_156_D4_wood_hp",
+        "2_156_D4_wood_ms",
+        "2_163_E5_leaf_hp",
+        "2_163_E5_leaf_ms",
+        "2_165_E5_leaf_hp",
+        "2_165_E5_leaf_ms",
+        "2_167_Q8_leaf_hp",
+        "2_167_Q8_leaf_ms",
+        "2_171_Q8_leaf_hp",
+        "2_171_Q8_leaf_ms",
+        "2_168_Q8_wood_hp",
+        "2_168_Q8_wood_ms",
+        "2_172_Q8_wood_hp",
+        "2_172_Q8_wood_ms",
+        "3_198_D4_leaf_hp",
+        "3_198_D4_leaf_ms",
+        "3_202_D4_leaf_hp",
+        "3_202_D4_leaf_ms"
+        ]
+    output:
+        [
+        correlation_between_tec_rep.tst,
+        "msdartseq_counts_fixed_without_rep.tst"
+        ]
+
+marks_with_msp_outputs:
+    [
+    "marks_with_counts_bigger_than_0",
+    ]
+
+find_methylation_site_position_inputs_p1:
+    [
+    "BSgenome.Egrandis.JGI.297_2.0.tar.gz"
+    ]
+
+find_methylation_site_position_inputs_p2:
+    [
+    "mspI_pstI_sites.fa"
+    ]
+find_methylation_site_position_outputs_p2:
+    [
+    "msp_pst_sites_positions",
+    "mspI_sites"
+    ]
+
+detemines_sampled_site_position:
+    [
+    "msdartseq_sequenced_fragments",
+    "msdartseq_methylation_sites_of_sequenced_fragments",
+    "ms_dartseq_counts_final"
+    ]
+
+fragments_analysis_outptus:
+    [
+    "all_fragments_generated_with_pstI_mspI_disgestion",
+    "fragments_descriptive_statistics",
+    "fragments_distribution_comparison"
+    ]
+
+dist_graph:
+    [
+    "msdartseq_tested_methylation_sites.png",
+    "msdartseq_intersection_methylation_sites.png"
+    ]
+
+intersect_marks_params:
+    prefix:
+        [
+        "sites_on_the_intersection/MS-DArT_samples",
+        "sites_on_the_intersection/MS-DArT_groups",
+        "sites_on_the_intersection/all_samples_leaf",
+        "sites_on_the_intersection/all_samples_wood"
+        ]
+
+enzymes:
+    [
+    "ms",
+    "hp"
+    ]
+
+clones_names:
+    [
+    "A1",
+    "B2",
+    "E5",
+    "Q8",
+    "D4"
+    ]
+tissues:
+    [
+    "leaf",
+    "wood"
+    ]
+
+reference_genome: "Egrandis_297_v2.0.softmasked.fa"
+genome_annotation_file: "Egrandis_297_v2.0.gene_exons.gff3"
+transposons_file: "Egrandis_297_v2.0_transposons.bed"
+
+DEseq2_with_DArTCounts_params:
+    groups: ["2", "3"]
+    prefix: DEseq2_results/deseq_group
+    sep_into: 3
+    subset_model: "intersect"
+    no_bio_rep: "FALSE"
+    dispersion: "NULL"
+    min_msp: 3
+    fdr: 0.05
+    log_fold_change: 2
+    filter: "posit"
+    samples_without_rep:
+        ["empty"]
+
+venn_plots_g2_g3_outputs:
+    marks:
+        [
+    "A1_venn_plots_marks.svg",
+    "B2_venn_plots_marks.svg",
+    "D4_venn_plots_marks.svg",
+    "E5_venn_plots_marks.svg",
+    "Q8_venn_plots_marks.svg"
+        ]
+    file_name: methylated_marks_by_clone.svg
+
+SuperExactTest:
+    population_size_marks: 90378
+    sufix_same_clone: _DM_marks_all_tissue_and_local
+    sufix_same_place: DM_marks_all_clones
+    sufix_intersect_in_each_place: Marks
+    sufix_input_files_leaf:
+        [
+    "_Leaf-MG_vs_Leaf-PR_Leaf-MG_unique_marks.txt",
+    "_Leaf-MG_vs_Leaf-PR_intersection_marks.txt",
+    "_Leaf-MG_vs_Leaf-PR_Leaf-PR_unique_marks.txt"
+        ]
+    sufix_input_files_wood:
+        [
+    "_Wood-MG_vs_Wood-PR_Wood-MG_unique_marks.txt",
+    "_Wood-MG_vs_Wood-PR_intersection_marks.txt",
+    "_Wood-MG_vs_Wood-PR_Wood-PR_unique_marks.txt"
+        ]
+    groups_graphs_3: ["unique_MG", "intersect_MG_PR", "unique_PR"]
+    genotypes_MG_prod_order:
+        ["Q8", "D4","E5", "B2", "A1"]
+    genotypes_PR_prod_order:
+        ["Q8", "E5", "A1", "B2","D4"]
+
+make_bed_methylated_sites:
+    [
+    "msdart_methylatied_sites.bed",
+    "msdart_methylatied_sites_only_plus.bed"
+    ]
+
+genomic_context_outputs:
+    [
+    "gene_features_sorted.gff3",
+    "intersect_marks_genes.txt",
+    "intersect_marks_transposons.txt",
+    "marks_in_exons.txt",
+    "methylation_within_exon_with_TE.txt",
+    "methylation_outside_exon_within_TE.txt",
+    "Mehylated_sites_distribution_graph.svg"
+    ]
+p1_out1: "genomic_context_files/marks_within_genes.bed"
+p1_out2: "genomic_context_files/marks_outside_genes.bed"
+p2_out1: "genomic_context_files/marks_within_transposons.bed"
+p2_out2: "genomic_context_files/marks_intergenic_and_outside_TEs.bed"
+p3_out1: "genomic_context_files/methylations_within_exons.bed"
+p3_out2: "genomic_context_files/methylations_within_exons_of_overlaping_genes.bed"
+p3_out3: "genomic_context_files/methylations_within_genes_but_outside_exons.bed"
+p4_out1: "genomic_context_files/methylations_within_exons_not_overlaping_TEs.bed"
+p4_out2: "genomic_context_files/methylations_within_exons_overlaping_TEs.bed"
+p4_out3: "genomic_context_files/methylations_within_TEs_in_intron_or_UTR.bed"
+p4_out4: "genomic_context_files/methylations_within_intron_or_UTR.bed"
+
+transposons_plots:
+    transposons_for_sample:
+        [
+        "MSDArT_intersect_DE_transposons.txt"
+        ]
+    transposons_table:
+        [
+        "transposons_classification_table.tst"
+        ]
+
+    transposon_bar_plot:
+        [
+        "transposons_classification.svg",
+        "transposons_classification_normalized.svg"
+        ]
+    transposon_superexact:
+        [
+        "TEs_superexact_table.tst"
+        ]
+
+transposons_plots_params:
+  use_intersections: "FALSE"
+
+PCA:
+    outputs:
+        [
+        "PCA_by_leaf_with_frame.svg",
+        "PCA_by_leaf_no_frame.svg",
+        "PAC_by_leaf_only_mspI_no_frame.svg",
+        "PCA_by_wood_with_frame.svg",
+        "PCA_by_wood_no_frame.svg",
+        "PAC_by_wood_only_mspI_no_frame.svg",
+        "PCA_by_A1_leaf_with_frame.svg",
+        "PCA_by_A1_leaf_no_frame.svg",
+        "PCA_by_A1_leaf_only_mspI_no_frame.svg",
+        "PCA_by_A1_wood_with_frame.svg",
+        "PCA_by_A1_wood_no_frame.svg",
+        "PCA_by_A1_wood_only_mspI_no_frame.svg",
+        "PCA_by_B2_leaf_with_frame.svg",
+        "PCA_by_B2_leaf_no_frame.svg",
+        "PCA_by_B2_leaf_only_mspI_no_frame.svg",
+        "PCA_by_B2_wood_with_frame.svg",
+        "PCA_by_B2_wood_no_frame.svg",
+        "PCA_by_B2_wood_only_mspI_no_frame.svg",
+        "PCA_by_D4_leaf_with_frame.svg",
+        "PCA_by_D4_leaf_no_frame.svg",
+        "PCA_by_D4_leaf_only_mspI_no_frame.svg",
+        "PCA_by_D4_wood_with_frame.svg",
+        "PCA_by_D4_wood_no_frame.svg",
+        "PCA_by_D4_wood_only_mspI_no_frame.svg",
+        "PCA_by_E5_leaf_with_frame.svg",
+        "PCA_by_E5_leaf_no_frame.svg",
+        "PCA_by_E5_leaf_only_mspI_no_frame.svg",
+        "PCA_by_E5_wood_with_frame.svg",
+        "PCA_by_E5_wood_no_frame.svg",
+        "PCA_by_E5_wood_only_mspI_no_frame.svg",
+        "PCA_by_Q8_leaf_with_frame.svg",
+        "PCA_by_Q8_leaf_no_frame.svg",
+        "PCA_by_Q8_leaf_only_mspI_no_frame.svg",
+        "PCA_by_Q8_wood_with_frame.svg",
+        "PCA_by_Q8_wood_no_frame.svg",
+        "PCA_by_Q8_wood_only_mspI_no_frame.svg"
+        ]
+
+biomart_params:
+    its_in_listMarts: "no"
+    biomart_name: "phytozome_mart"
+    biomart_dataset: "phytozome"
+    biomart_host: "https://phytozome.jgi.doe.gov:443/biomart/martservice"
+    biomart_vschema: "zome_mart"
+    c_name: 2
+    annotation_file_rda: E_grandis_all_genes_biomart.rda
+biomart_output:
+    ["biomart_annot_table.txt"]
+
+make_annotation_table:
+    annotation_table_inputs:
+        [
+        "Egrandis_297_v2.0_blast2GO.txt",
+        ]
+    annotation_table_output:
+        [
+        "BRASU1_tested_site_distance_to_genes.txt",
+        "anotacao_combinada_blast2GO_biomart_final.txt",
+        "annot_final.rda"
+        ]
+
+counts_larger_than_threshold: all_samples_msp_bigger_than_threshold.txt #
+
+phenotype_input: TECHS_Data_Tree_Level_19_06_2019.csv
+phenotype_outs:
+    [
+    "comparison_between_location_all_traits.svg",
+    "comparison_within_location_all_traits.svg"
+    ]
